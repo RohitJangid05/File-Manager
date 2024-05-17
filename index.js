@@ -17,6 +17,13 @@ app.get('/', function (req, res) {
     })
 });
 
+app.post('/create', function (req, res) {
+    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, function (err) {
+        if (err) console.log(err)
+        else res.redirect('/')
+    })
+})
+
 app.get('/file/:filename', function (req, res) {
     fs.readFile(`./files/${req.params.filename}`, "utf-8", function (err, filedata) {
         const filename = req.params.filename.split('.txt').join('')
@@ -31,12 +38,7 @@ app.delete('/delete/:filename', function (req, res) {
     })
 })
 
-app.post('/create', function (req, res) {
-    fs.writeFile(`./files/${req.body.title.split(' ').join('')}.txt`, req.body.details, function (err) {
-        if (err) console.log(err)
-        else res.redirect('/')
-    })
-})
+
 
 app.listen(port, function () {
     console.log("server started at http://localhost:3000")
