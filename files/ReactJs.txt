@@ -1,0 +1,24 @@
+ReactJS is a popular JavaScript library used for building user interfaces, particularly for single-page applications where a fast and interactive user experience is desired. Developed and maintained by Facebook, React allows developers to create large web applications that can change data, without reloading the page. Here are some key concepts and features of ReactJS:
+
+Key Concepts
+
+1.Components:
+React applications are built using components, which are reusable pieces of code that represent parts of the user interface. Components can be functional (stateless) or class-based (stateful).
+
+2.JSX:
+JavaScript XML (JSX) is a syntax extension for JavaScript that looks similar to XML or HTML. JSX is used in React to describe what the UI should look like.
+
+3.State and Props:
+State:
+Managed within the component, state holds data that may change over time. State is mutable and is used to make components interactive.
+Props: 
+Short for properties, props are read-only attributes passed from parent components to child components, allowing data flow and reusability of components.
+
+4.Virtual DOM:
+React uses a virtual DOM to optimize updates and rendering. When the state of an object changes, React first updates the virtual DOM, then compares it with a snapshot of the DOM taken before the update. This process, called reconciliation, allows React to update only the changed parts of the actual DOM, leading to better performance.
+
+5.Lifecycle Methods:
+Class components have lifecycle methods that are invoked during different phases of a component’s lifecycle. These methods include componentDidMount, componentDidUpdate, and componentWillUnmount.
+
+6.Hooks:
+Introduced in React 16.8, hooks are functions that let developers use state and other React features in functional components. Common hooks include useState, useEffect, and useContext.

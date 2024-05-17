@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>File Manager</title>
+    <style>
+        body::-webkit-scrollbar{
+            display: none;
+        }
+    </style>
+</head>
+
+<body class="w-full min-h-screen bg-zinc-800">
+    <h1 class="text-center text-white font-semibold pt-5 text-3xl">File Manager</h1>
+    <main class=" p-10 width-full min-h-screen">
+        <form class="px-5" action="/create" method="post">
+            <input 
+            class="block bg-zinc-600 text-white text-lg w-full p-2 rounded-md outline-none" type="text"
+            placeholder="Enter file name" 
+            name="title">
+            <textarea 
+            class="block bg-zinc-600 h-48 text-white text-lg w-full p-2 mt-3 rounded-md resize-none outline-none"
+            placeholder="Enter file description" 
+            name="details"></textarea>
+            <input 
+            class="text-white mt-3 bg-blue-600 font-semibold px-5 py-3 cursor-pointer rounded-md" 
+            type="submit"
+            value="Add File">
+        </form>
+        <h1 class="text-3xl text-white text-center mt-5">Your Files Are</h1>
+        <div class="cards flex gap-3 p-5 flex-wrap justify-center items-center">
+            <% if(files.length>0) {%>
+                <% files.forEach(function(val){%>
+                    <div class="card text-wrap rounded-md mt-5 min-w-56 text-white p-5 bg-zinc-600">
+                        <h1 class="text-2xl mb-5">
+                            <%= val %>
+                        </h1>
+                        <div class="w-full flex justify-between">
+                            <a href="/file/<%= val %>" class="text-blue-400">Read more</a>
+                            <form action="/delete/<%= val %>?_method=DELETE" method="POST" style="display:inline;">
+                                <button type="submit" class="text-red-500">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                    <%})%>
+                        <%} else {%>
+                            <h3 class="text-white rounded-md bg-zinc-600 mt-5 py-3 px-5">No File</h3>
+                            <%}%>
+        </div>
+    </main>
+</body>
+
+</html>

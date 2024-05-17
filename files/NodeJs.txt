@@ -1,0 +1,19 @@
+Node.js is a powerful and versatile open-source, cross-platform JavaScript runtime environment that allows developers to execute JavaScript code server-side. Here’s an overview of key aspects of Node.js:
+
+Key Features of Node.js
+
+1.Asynchronous and Event-Driven:
+Node.js uses an event-driven, non-blocking I/O model, which makes it lightweight and efficient. This is particularly useful for I/O-heavy operations, such as reading files or handling network connections.
+
+2.Single-Threaded but Highly Scalable:
+Despite being single-threaded, Node.js can handle many connections concurrently. It uses an event loop to manage asynchronous operations, allowing for scalability in handling large numbers of simultaneous connections.
+
+3.V8 JavaScript Engine:
+Node.js is built on Chrome's V8 JavaScript engine, which compiles JavaScript into machine code, providing fast and efficient execution.
+
+4.NPM (Node Package Manager):
+NPM is the default package manager for Node.js and the world's largest software registry. It allows developers to easily install, share, and manage dependencies in their projects.
+
+5.Rich Ecosystem:
+With a vast collection of libraries and frameworks available through NPM, Node.js supports a wide range of applications, from web servers and APIs to real-time chat applications and IoT.
+        
